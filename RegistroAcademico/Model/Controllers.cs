@@ -8,6 +8,6 @@ namespace PlayerUI.Model
 {
     public static class Controllers
     {
-        public static string UsuarioController = "Usuario";
+        public static string UsuarioController = "/Usuario";
     }
 }
