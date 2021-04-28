@@ -34,11 +34,36 @@ namespace PlayerUI.Services
                 var result = await response.Content.ReadAsStringAsync();
                 var list = JsonConvert.DeserializeObject<Response>(result);
 
+                return list;
+            }
+            catch (Exception e)
+            {
                 return new Response
                 {
-                    IsSuccess = true,
-                    Result = list.Result
+                    IsSuccess = false,
+                    Message = $"Error al cargar los datos {e}"
                 };
+            }
+        }
+        public async Task<Response> GetById(string Controller, int id)
+        {
+            try
+            {
+                var response = await cliente.GetAsync(url + Controller+"/"+id);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = JsonConvert.DeserializeObject<Response>(await response.Content.ReadAsStringAsync()).Message
+                    };
+                }
+
+                var result = await response.Content.ReadAsStringAsync();
+                var list = JsonConvert.DeserializeObject<Response>(result);
+
+                return list;
             }
             catch (Exception e)
             {
