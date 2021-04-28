@@ -21,7 +21,7 @@ namespace PlayerUI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Interaction.InputBox("Ingresa el Documento del docente", "Búsqueda de Docente", "");
+            Interaction.InputBox("Ingresa el NIE del Alumno", "Búsqueda del Alumno", "");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -47,19 +47,25 @@ namespace PlayerUI
             //Aquí va el put al api xDXDXD
         }
 
-        private void FillDocente()
+        private void FillAlumno()
         {
             Usuario oUsuario = new Usuario();
             oUsuario.Nombre = txtNombre.Text.Trim();
             oUsuario.Apellido = txtApellido.Text.Trim();
             oUsuario.Username = txtUsuario.Text.Trim();
             oUsuario.Clave = txtClave.Text.Trim();
+            oUsuario.Documento = txtNie.Text.Trim();
             oUsuario.Telefono = txtTelefono.Text.Trim();
             oUsuario.Direccion = txtDireccion.Text.Trim();
             oUsuario.FechaNacimiento = txtFechaNac.SelectionRange.End;
             oUsuario.Representante = txtRepresentante.Text.Trim();
             oUsuario.TelefonoRepresentante = txtTelefonoRepresentante.Text.Trim();
             oUsuario.DocumentoRepresentante = txtDocumentoRepresentante.Text.Trim();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

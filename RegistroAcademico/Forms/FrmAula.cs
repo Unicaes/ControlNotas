@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using PlayerUI.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,7 @@ namespace PlayerUI.Forms
             InitializeComponent();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,5 +29,25 @@ namespace PlayerUI.Forms
         {
 
         }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //Aquí va el put al api xDXDXD
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Interaction.InputBox("Ingresa el nombre del Aula", "Búsqueda por Aula", "");
+        }
+
+        private void FillMateria()
+        {
+            Aula oAula = new Aula();
+            oAula.Nombre = txtNombre.Text.Trim();
+            oAula.Seccion = txtSeccion.Text.Trim();
+            oAula.Anio = txtAnio.Text.Trim();
+            oAula.IdUsuario = cmbDocente.SelectedIndex;
+        }
+
+
     }
 }

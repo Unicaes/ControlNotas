@@ -45,8 +45,10 @@ namespace PlayerUI
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
+
             openChildForm(new IngresoDeNotasAlumno());
             hideSubMenu();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -112,8 +114,12 @@ namespace PlayerUI
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
         {
-            //ALUMNO
+
             openChildForm(new FrmAgregarAlumno());
+
+           //..
+            //your codes
+            //..
             hideSubMenu();
         }
 
@@ -141,11 +147,7 @@ namespace PlayerUI
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form3());
-            //..
-            //your codes
-            //..
-            hideSubMenu();
+
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
