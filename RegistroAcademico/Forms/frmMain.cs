@@ -1,6 +1,10 @@
 ﻿using PlayerUI.Forms;
+using PlayerUI.Middlewares;
+using PlayerUI.Model;
+using PlayerUI.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,6 +17,8 @@ namespace PlayerUI
 {
     public partial class frmMain : Form
     {
+        ApiService api;
+        Usuario oUsuario;
         public frmMain()
         {
             InitializeComponent();
@@ -94,9 +100,16 @@ namespace PlayerUI
             hideSubMenu();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private async void button6_Click(object sender, EventArgs e)
         {
-            //NOMINA ALUMNOS
+            api = new ApiService();
+            var Alumnos = await api.GetAll<Usuario>(Controllers.UsuarioController + "/Alumnos");
+            if (Alumnos.IsSuccess)
+            {
+                ObservableCollection<Usuario> LAlumnos = (ObservableCollection<Usuario>)Alumnos.Result;
+                ReporteNominaAlumnos reporte = new ReporteNominaAlumnos();
+                reporte.PrintReport(LAlumnos);
+            }
             hideSubMenu();
         }
 
