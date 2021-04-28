@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace PlayerUI
 {
@@ -15,6 +16,11 @@ namespace PlayerUI
         public FrmAgregarDocente()
         {
             InitializeComponent();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Interaction.InputBox("Ingresa el Documento del docente", "Búsqueda de Docente", "");
         }
     }
 }
