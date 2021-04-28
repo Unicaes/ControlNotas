@@ -30,6 +30,15 @@ namespace PlayerUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNie = new System.Windows.Forms.TextBox();
+            this.txtFechaNac = new System.Windows.Forms.MonthCalendar();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTelefonoRepresentante = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDocumentoRepresentante = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -48,15 +57,6 @@ namespace PlayerUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtRepresentante = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTelefonoRepresentante = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtDocumentoRepresentante = new System.Windows.Forms.TextBox();
-            this.txtFechaNac = new System.Windows.Forms.MonthCalendar();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNie = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,84 @@ namespace PlayerUI
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestión de Alumnos";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 164);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 21);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "NIE";
+            // 
+            // txtNie
+            // 
+            this.txtNie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNie.Location = new System.Drawing.Point(11, 188);
+            this.txtNie.Name = "txtNie";
+            this.txtNie.Size = new System.Drawing.Size(319, 29);
+            this.txtNie.TabIndex = 22;
+            // 
+            // txtFechaNac
+            // 
+            this.txtFechaNac.Location = new System.Drawing.Point(12, 260);
+            this.txtFechaNac.Name = "txtFechaNac";
+            this.txtFechaNac.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(358, 301);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(190, 21);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Teléfono del Representante";
+            // 
+            // txtTelefonoRepresentante
+            // 
+            this.txtTelefonoRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefonoRepresentante.Location = new System.Drawing.Point(362, 325);
+            this.txtTelefonoRepresentante.Name = "txtTelefonoRepresentante";
+            this.txtTelefonoRepresentante.Size = new System.Drawing.Size(319, 29);
+            this.txtTelefonoRepresentante.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(359, 365);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(215, 21);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Documento del Representante";
+            // 
+            // txtDocumentoRepresentante
+            // 
+            this.txtDocumentoRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDocumentoRepresentante.Location = new System.Drawing.Point(363, 389);
+            this.txtDocumentoRepresentante.Name = "txtDocumentoRepresentante";
+            this.txtDocumentoRepresentante.Size = new System.Drawing.Size(319, 29);
+            this.txtDocumentoRepresentante.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(358, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 21);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Representante";
+            // 
+            // txtRepresentante
+            // 
+            this.txtRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRepresentante.Location = new System.Drawing.Point(362, 254);
+            this.txtRepresentante.Name = "txtRepresentante";
+            this.txtRepresentante.Size = new System.Drawing.Size(319, 29);
+            this.txtRepresentante.TabIndex = 16;
             // 
             // btnModificar
             // 
@@ -290,88 +368,9 @@ namespace PlayerUI
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(358, 230);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 21);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Representante";
-            // 
-            // txtRepresentante
-            // 
-            this.txtRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRepresentante.Location = new System.Drawing.Point(362, 254);
-            this.txtRepresentante.Name = "txtRepresentante";
-            this.txtRepresentante.Size = new System.Drawing.Size(319, 29);
-            this.txtRepresentante.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(358, 301);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(190, 21);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Teléfono del Representante";
-            // 
-            // txtTelefonoRepresentante
-            // 
-            this.txtTelefonoRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefonoRepresentante.Location = new System.Drawing.Point(362, 325);
-            this.txtTelefonoRepresentante.Name = "txtTelefonoRepresentante";
-            this.txtTelefonoRepresentante.Size = new System.Drawing.Size(319, 29);
-            this.txtTelefonoRepresentante.TabIndex = 20;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(359, 365);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(215, 21);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Documento del Representante";
-            // 
-            // txtDocumentoRepresentante
-            // 
-            this.txtDocumentoRepresentante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDocumentoRepresentante.Location = new System.Drawing.Point(363, 389);
-            this.txtDocumentoRepresentante.Name = "txtDocumentoRepresentante";
-            this.txtDocumentoRepresentante.Size = new System.Drawing.Size(319, 29);
-            this.txtDocumentoRepresentante.TabIndex = 18;
-            // 
-            // txtFechaNac
-            // 
-            this.txtFechaNac.Location = new System.Drawing.Point(12, 260);
-            this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 164);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 21);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "NIE";
-            // 
-            // txtNie
-            // 
-            this.txtNie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNie.Location = new System.Drawing.Point(11, 188);
-            this.txtNie.Name = "txtNie";
-            this.txtNie.Size = new System.Drawing.Size(319, 29);
-            this.txtNie.TabIndex = 22;
-            // 
             // FrmAgregarAlumno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(872, 667);

@@ -150,13 +150,14 @@ namespace PlayerUI
         private void button12_Click(object sender, EventArgs e)
         {
             //MATERIAS
+            openChildForm(new FrmMaterias());
             hideSubMenu();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             //AULA
-
+            openChildForm(new FrmAula());
             hideSubMenu();
         }
 
