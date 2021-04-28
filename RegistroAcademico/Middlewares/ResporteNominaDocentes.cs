@@ -95,13 +95,13 @@ namespace PlayerUI.Middlewares
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Direccion)).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].FechaNacimiento.ToString("dd'/'MM'/'yyyy"))).AddStyle(mainStyles[102]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Fecha_Nacimiento.ToString())).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Representante)).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].TelefonoRepresentante)).AddStyle(mainStyles[102]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Telefono_Representante)).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].DocumentoRepresentante)).AddStyle(mainStyles[102]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Documento_Representante)).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
                         }
                         else
@@ -118,13 +118,13 @@ namespace PlayerUI.Middlewares
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Direccion)).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].FechaNacimiento.ToString("dd'/'MM'/'yyyy"))).AddStyle(mainStyles[101]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Fecha_Nacimiento.ToString())).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Representante)).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].TelefonoRepresentante)).AddStyle(mainStyles[101]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Telefono_Representante)).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].DocumentoRepresentante)).AddStyle(mainStyles[101]);
+                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Documento_Representante)).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
                         }
                     }

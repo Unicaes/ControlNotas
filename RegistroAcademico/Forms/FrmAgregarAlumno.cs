@@ -60,10 +60,10 @@ namespace PlayerUI
             oUsuario.Documento = txtNie.Text.Trim();
             oUsuario.Telefono = txtTelefono.Text.Trim();
             oUsuario.Direccion = txtDireccion.Text.Trim();
-            oUsuario.FechaNacimiento = txtFechaNac.SelectionRange.End;
+            oUsuario.Fecha_Nacimiento = txtFechaNac.SelectionRange.End;
             oUsuario.Representante = txtRepresentante.Text.Trim();
-            oUsuario.TelefonoRepresentante = txtTelefonoRepresentante.Text.Trim();
-            oUsuario.DocumentoRepresentante = txtDocumentoRepresentante.Text.Trim();
+            oUsuario.Telefono_Representante = txtTelefonoRepresentante.Text.Trim();
+            oUsuario.Documento_Representante = txtDocumentoRepresentante.Text.Trim();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

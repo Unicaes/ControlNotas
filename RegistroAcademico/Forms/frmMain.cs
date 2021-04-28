@@ -106,9 +106,11 @@ namespace PlayerUI
             var Alumnos = await api.GetAll<Usuario>(Controllers.UsuarioController + "/Alumnos");
             if (Alumnos.IsSuccess)
             {
-                ObservableCollection<Usuario> LAlumnos = (ObservableCollection<Usuario>)Alumnos.Result;
+                List<Usuario> LAlumnos = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Usuario>>(Alumnos.Result.ToString()); ;
                 ReporteNominaAlumnos reporte = new ReporteNominaAlumnos();
                 reporte.PrintReport(LAlumnos);
+                MessageBox.Show("Reporte guardado correctamente en: " + reporte.path, "Informe completado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(reporte.path);
             }
             hideSubMenu();
         }
