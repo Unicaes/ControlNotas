@@ -15,7 +15,6 @@ namespace PlayerUI.Forms
         public FrmDashoardAdmin()
         {
             InitializeComponent();
-            btnAulas.BringToFront();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,27 +27,15 @@ namespace PlayerUI.Forms
 
         }
 
-        private bool ValidarCampos()
+
+        private void button2_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (txtClave.PasswordChar == '*')
-            {
-                button3.BringToFront();
-                txtClave.PasswordChar = '\0';
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
-            if (txtClave.PasswordChar == '\0')
-            {
-                btnAulas.BringToFront();
-                txtClave.PasswordChar = '*';
-            }
+           
         }
 
         private void label7_Click(object sender, EventArgs e)
