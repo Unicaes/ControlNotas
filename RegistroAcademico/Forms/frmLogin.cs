@@ -25,9 +25,18 @@ namespace PlayerUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmMain main = new frmMain();
-            main.Show();
-            this.Hide();
+            FillUsuario();
+            if (true)
+            {
+                frmMain main = new frmMain();
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Verifica tus datos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void FillUsuario()

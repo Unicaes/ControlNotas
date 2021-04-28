@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlayerUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,10 +45,7 @@ namespace PlayerUI
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form2());
-            //..
-            //your codes
-            //..
+            openChildForm(new IngresoDeNotasAlumno());
             hideSubMenu();
         }
 
@@ -84,33 +82,25 @@ namespace PlayerUI
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //NOTAS ALUMNO
             hideSubMenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //NOTAS MATERIA
             hideSubMenu();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //NOMINA ALUMNOS
             hideSubMenu();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //NOMINA DOCENTES
             hideSubMenu();
         }
         #endregion
@@ -130,17 +120,14 @@ namespace PlayerUI
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //MATERIAS
             hideSubMenu();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            //AULA
+
             hideSubMenu();
         }
 
@@ -191,6 +178,12 @@ namespace PlayerUI
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new FrmAgregarDocente());
+            hideSubMenu();
         }
     }
 }
