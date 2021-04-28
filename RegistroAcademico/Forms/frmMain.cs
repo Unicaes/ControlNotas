@@ -211,5 +211,10 @@ namespace PlayerUI
             openChildForm(new FrmAgregarDocente());
             hideSubMenu();
         }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
