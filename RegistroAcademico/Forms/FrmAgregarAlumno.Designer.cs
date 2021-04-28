@@ -34,7 +34,6 @@ namespace PlayerUI
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,11 +55,16 @@ namespace PlayerUI
             this.label10 = new System.Windows.Forms.Label();
             this.txtDocumentoRepresentante = new System.Windows.Forms.TextBox();
             this.txtFechaNac = new System.Windows.Forms.MonthCalendar();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNie = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtNie);
             this.groupBox1.Controls.Add(this.txtFechaNac);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtTelefonoRepresentante);
@@ -87,9 +91,9 @@ namespace PlayerUI
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(95, 98);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(705, 488);
+            this.groupBox1.Size = new System.Drawing.Size(705, 512);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestión de Alumnos";
@@ -100,12 +104,13 @@ namespace PlayerUI
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(471, 434);
+            this.btnModificar.Location = new System.Drawing.Point(471, 450);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(102, 34);
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBuscar
             // 
@@ -114,7 +119,7 @@ namespace PlayerUI
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Location = new System.Drawing.Point(580, 434);
+            this.btnBuscar.Location = new System.Drawing.Point(580, 450);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(102, 34);
             this.btnBuscar.TabIndex = 14;
@@ -128,7 +133,7 @@ namespace PlayerUI
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(363, 434);
+            this.btnAgregar.Location = new System.Drawing.Point(363, 450);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(102, 34);
             this.btnAgregar.TabIndex = 2;
@@ -140,25 +145,17 @@ namespace PlayerUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 163);
+            this.label8.Location = new System.Drawing.Point(7, 230);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 21);
             this.label8.TabIndex = 13;
             this.label8.Text = "Fecha de nacimiento";
             // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(422, 52);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(319, 20);
-            this.txtFechaNacimiento.TabIndex = 12;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 364);
+            this.label7.Location = new System.Drawing.Point(8, 431);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 21);
             this.label7.TabIndex = 11;
@@ -167,7 +164,7 @@ namespace PlayerUI
             // txtDireccion
             // 
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDireccion.Location = new System.Drawing.Point(12, 388);
+            this.txtDireccion.Location = new System.Drawing.Point(12, 455);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(319, 29);
             this.txtDireccion.TabIndex = 10;
@@ -349,18 +346,36 @@ namespace PlayerUI
             // 
             // txtFechaNac
             // 
-            this.txtFechaNac.Location = new System.Drawing.Point(12, 193);
+            this.txtFechaNac.Location = new System.Drawing.Point(12, 260);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 164);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 21);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "NIE";
+            // 
+            // txtNie
+            // 
+            this.txtNie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNie.Location = new System.Drawing.Point(11, 188);
+            this.txtNie.Name = "txtNie";
+            this.txtNie.Size = new System.Drawing.Size(319, 29);
+            this.txtNie.TabIndex = 22;
             // 
             // FrmAgregarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(878, 661);
+            this.ClientSize = new System.Drawing.Size(872, 667);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtFechaNacimiento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgregarAlumno";
             this.Text = "FrmAgregarDocente";
@@ -378,7 +393,6 @@ namespace PlayerUI
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label6;
@@ -400,5 +414,7 @@ namespace PlayerUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRepresentante;
         private System.Windows.Forms.MonthCalendar txtFechaNac;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNie;
     }
 }

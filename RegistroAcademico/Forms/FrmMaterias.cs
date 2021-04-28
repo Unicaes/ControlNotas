@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlayerUI.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,7 @@ namespace PlayerUI.Forms
 
         }
 
+<<<<<<< Updated upstream
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,6 +42,12 @@ namespace PlayerUI.Forms
         private void button3_Click(object sender, EventArgs e)
         {
 
+=======
+        private void FillMateria()
+        {
+            Materia oMateria = new Materia();
+            oMateria.Nombre = txtNombre.Text;
+>>>>>>> Stashed changes
         }
     }
 }

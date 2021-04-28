@@ -22,9 +22,15 @@ namespace PlayerUI.Forms
 
         }
 
+<<<<<<< Updated upstream
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+=======
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> Stashed changes
         }
     }
 }
