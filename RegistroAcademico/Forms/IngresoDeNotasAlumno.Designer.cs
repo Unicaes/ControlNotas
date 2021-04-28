@@ -40,10 +40,9 @@ namespace PlayerUI.Forms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-<<<<<<< Updated upstream
+
             this.button3 = new System.Windows.Forms.Button();
-=======
->>>>>>> Stashed changes
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -128,7 +127,7 @@ namespace PlayerUI.Forms
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
-<<<<<<< Updated upstream
+
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -184,7 +183,7 @@ namespace PlayerUI.Forms
             this.button3.TabIndex = 10;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-=======
+
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -227,7 +226,7 @@ namespace PlayerUI.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(255, 33);
             this.comboBox1.TabIndex = 0;
->>>>>>> Stashed changes
+
             // 
             // IngresoDeNotasAlumno
             // 

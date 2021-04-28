@@ -45,12 +45,10 @@ namespace PlayerUI
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
+
             openChildForm(new IngresoDeNotasAlumno());
             hideSubMenu();
-=======
 
->>>>>>> Stashed changes
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -116,15 +114,12 @@ namespace PlayerUI
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
-            //ALUMNO
+
             openChildForm(new FrmAgregarAlumno());
-=======
-            openChildForm(new FrmAgregarAlumno());
-            //..
+
+           //..
             //your codes
             //..
->>>>>>> Stashed changes
             hideSubMenu();
         }
 

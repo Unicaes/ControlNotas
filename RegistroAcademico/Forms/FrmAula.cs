@@ -19,7 +19,7 @@ namespace PlayerUI.Forms
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,7 +28,7 @@ namespace PlayerUI.Forms
         private void button3_Click(object sender, EventArgs e)
         {
 
-=======
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Aquí va el put al api xDXDXD
@@ -45,8 +45,9 @@ namespace PlayerUI.Forms
             oAula.Nombre = txtNombre.Text.Trim();
             oAula.Seccion = txtSeccion.Text.Trim();
             oAula.Anio = txtAnio.Text.Trim();
-            oAula.IdUsuario = cmbDocentes.SelectedIndex;
->>>>>>> Stashed changes
+            oAula.IdUsuario = cmbDocente.SelectedIndex;
         }
+
+
     }
 }

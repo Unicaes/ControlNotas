@@ -33,17 +33,6 @@ namespace PlayerUI.Forms
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-<<<<<<< Updated upstream
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-=======
->>>>>>> Stashed changes
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,17 +40,14 @@ namespace PlayerUI.Forms
             this.txtSeccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-<<<<<<< Updated upstream
             this.button1 = new System.Windows.Forms.Button();
-=======
-            this.cmbDocentes = new System.Windows.Forms.ComboBox();
->>>>>>> Stashed changes
+            this.cmbDocente = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbDocentes);
+            this.groupBox1.Controls.Add(this.cmbDocente);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnAgregar);
@@ -106,7 +92,6 @@ namespace PlayerUI.Forms
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -121,35 +106,6 @@ namespace PlayerUI.Forms
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.button3.BackgroundImage = global::PlayerUI.Properties.Resources.Group_1;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(644, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 29);
-            this.button3.TabIndex = 7;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.button2.BackgroundImage = global::PlayerUI.Properties.Resources.Group_2;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(644, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 29);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -215,7 +171,6 @@ namespace PlayerUI.Forms
             this.txtNombre.Size = new System.Drawing.Size(319, 29);
             this.txtNombre.TabIndex = 0;
             // 
-<<<<<<< Updated upstream
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -229,15 +184,14 @@ namespace PlayerUI.Forms
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-=======
-            // cmbDocentes
             // 
-            this.cmbDocentes.FormattingEnabled = true;
-            this.cmbDocentes.Location = new System.Drawing.Point(362, 124);
-            this.cmbDocentes.Name = "cmbDocentes";
-            this.cmbDocentes.Size = new System.Drawing.Size(319, 29);
-            this.cmbDocentes.TabIndex = 16;
->>>>>>> Stashed changes
+            // cmbDocente
+            // 
+            this.cmbDocente.FormattingEnabled = true;
+            this.cmbDocente.Location = new System.Drawing.Point(362, 124);
+            this.cmbDocente.Name = "cmbDocente";
+            this.cmbDocente.Size = new System.Drawing.Size(319, 29);
+            this.cmbDocente.TabIndex = 16;
             // 
             // FrmAula
             // 
@@ -269,10 +223,10 @@ namespace PlayerUI.Forms
         private System.Windows.Forms.TextBox txtSeccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
-<<<<<<< Updated upstream
+
         private System.Windows.Forms.Button button1;
-=======
+
         private System.Windows.Forms.ComboBox cmbDocentes;
->>>>>>> Stashed changes
+        private System.Windows.Forms.ComboBox cmbDocente;
     }
 }
