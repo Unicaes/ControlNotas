@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using PlayerUI.Model;
+using PlayerUI.Services;
 
 namespace PlayerUI
 {
     public partial class FrmAgregarDocente : Form
     {
         Usuario oUsuario;
+        private ApiService api = new ApiService();
         public FrmAgregarDocente()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace PlayerUI
             oUsuario = new Usuario();
             oUsuario.Nombre = txtNombre.Text.Trim();
             oUsuario.Apellido = txtApellido.Text.Trim();
-            oUsuario.User = txtUsuario.Text.Trim();
+            oUsuario.Username = txtUsuario.Text.Trim();
             oUsuario.Clave = txtClave.Text.Trim();
             oUsuario.Telefono = txtTelefono.Text.Trim();
             oUsuario.Direccion = txtDireccion.Text.Trim();
@@ -93,6 +95,30 @@ namespace PlayerUI
             {
                 button2.BringToFront();
                 txtClave.PasswordChar = '*';
+            }
+        }
+
+        private async void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            oUsuario = new Usuario
+            {
+                Apellido = this.txtApellido.Text,
+                Clave = this.txtClave.Text,
+                Direccion = this.txtDireccion.Text,
+                Documento = this.txtDocumento.Text,
+                Username = this.txtUsuario.Text,
+                Telefono = this.txtTelefono.Text,
+                Nombre = this.txtNombre.Text,
+                Tipo=1
+            };
+            var resp = await api.Post(Controllers.UsuarioController, oUsuario);
+            if (resp.IsSuccess)
+            {
+                //Dejar algo para cuando sea satisfactorio
+            }
+            else
+            {
+                MessageBox.Show("Error", resp.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

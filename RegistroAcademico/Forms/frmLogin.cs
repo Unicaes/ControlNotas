@@ -1,4 +1,5 @@
 ﻿using PlayerUI.Model;
+using PlayerUI.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace PlayerUI
 {
     public partial class frmLogin : Form
     {
+        private ApiService api = new ApiService();
+        Usuario oUsuario;
         public frmLogin()
         {
             InitializeComponent();
@@ -23,10 +26,11 @@ namespace PlayerUI
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             FillUsuario();
-            if (true)
+            var resp = await api.Post(Controllers.UsuarioController+"/Login",oUsuario);
+            if (resp.IsSuccess)
             {
                 frmMain main = new frmMain();
                 main.Show();
@@ -41,8 +45,8 @@ namespace PlayerUI
 
         private void FillUsuario()
         {
-            Usuario oUsuario = new Usuario();
-            oUsuario.User = txtUsername.Text.Trim();
+            oUsuario = new Usuario();
+            oUsuario.Username = txtUsername.Text.Trim();
             oUsuario.Clave = txtPassword.Text.Trim();
 
         }

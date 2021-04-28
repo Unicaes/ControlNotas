@@ -52,7 +52,7 @@ namespace PlayerUI
             Usuario oUsuario = new Usuario();
             oUsuario.Nombre = txtNombre.Text.Trim();
             oUsuario.Apellido = txtApellido.Text.Trim();
-            oUsuario.User = txtUsuario.Text.Trim();
+            oUsuario.Username = txtUsuario.Text.Trim();
             oUsuario.Clave = txtClave.Text.Trim();
             oUsuario.Telefono = txtTelefono.Text.Trim();
             oUsuario.Direccion = txtDireccion.Text.Trim();
