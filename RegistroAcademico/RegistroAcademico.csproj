@@ -155,7 +155,9 @@
     <Compile Include="Forms\FrmAgregarDocente.Designer.cs">
       <DependentUpon>FrmAgregarDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Middlewares\ReporteNominaAlumnos.cs" />
     <Compile Include="Middlewares\ReporteNotasAlumno.cs" />
+    <Compile Include="Middlewares\ResporteNominaDocentes.cs" />
     <Compile Include="Model\Aula.cs" />
     <Compile Include="Model\AulaMateria.cs" />
     <Compile Include="Model\Controllers.cs" />

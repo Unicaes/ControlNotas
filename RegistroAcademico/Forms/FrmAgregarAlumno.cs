@@ -14,6 +14,7 @@ namespace PlayerUI
 {
     public partial class FrmAgregarAlumno : Form
     {
+        Usuario oUsuario;
         public FrmAgregarAlumno()
         {
             InitializeComponent();
@@ -21,7 +22,8 @@ namespace PlayerUI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Interaction.InputBox("Ingresa el NIE del Alumno", "Búsqueda del Alumno", "");
+            oUsuario = new Usuario();
+            oUsuario.Documento = Interaction.InputBox("Ingresa el NIE del Alumno", "Búsqueda del Alumno", "");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -45,11 +47,12 @@ namespace PlayerUI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Aquí va el put al api xDXDXD
+            FillAlumno();
         }
 
         private void FillAlumno()
         {
-            Usuario oUsuario = new Usuario();
+            oUsuario = new Usuario();
             oUsuario.Nombre = txtNombre.Text.Trim();
             oUsuario.Apellido = txtApellido.Text.Trim();
             oUsuario.Username = txtUsuario.Text.Trim();

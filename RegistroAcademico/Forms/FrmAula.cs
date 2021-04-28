@@ -14,6 +14,7 @@ namespace PlayerUI.Forms
 {
     public partial class FrmAula : Form
     {
+        Aula oAula;
         public FrmAula()
         {
             InitializeComponent();
@@ -32,16 +33,18 @@ namespace PlayerUI.Forms
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Aquí va el put al api xDXDXD
+            FillMateria();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Interaction.InputBox("Ingresa el nombre del Aula", "Búsqueda por Aula", "");
+            oAula = new Aula();
+            oAula.Nombre = Interaction.InputBox("Ingresa el nombre del Aula", "Búsqueda por Aula", "");
         }
 
         private void FillMateria()
         {
-            Aula oAula = new Aula();
+            oAula = new Aula();
             oAula.Nombre = txtNombre.Text.Trim();
             oAula.Seccion = txtSeccion.Text.Trim();
             oAula.Anio = txtAnio.Text.Trim();
