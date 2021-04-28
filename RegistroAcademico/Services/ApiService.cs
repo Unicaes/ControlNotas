@@ -13,6 +13,7 @@ namespace PlayerUI.Services
     public class ApiService
     {
         private String url = "http://www.apiagiles.somee.com/api";
+        //private String url = "https://localhost:44362/api";
         public HttpClient cliente = new HttpClient();
         public async Task<Response> GetAll<T>(String Controller)
         {

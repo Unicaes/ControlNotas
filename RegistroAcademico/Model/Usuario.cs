@@ -24,7 +24,7 @@ namespace PlayerUI.Model
         public string Documento { get => documento; set => documento = value; }
         public string DocumentoRepresentante { get => documentoRepresentante; set => documentoRepresentante = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
-        public string User { get => user; set => user = value; }
+        public string Username { get => user; set => user = value; }
         public int IdAula { get => idAula; set => idAula = value; }
     }
 }
