@@ -30,6 +30,7 @@ namespace PlayerUI.Forms
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbDocente = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace PlayerUI.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.cmbDocente = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,14 @@ namespace PlayerUI.Forms
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestión de Aulas";
+            // 
+            // cmbDocente
+            // 
+            this.cmbDocente.FormattingEnabled = true;
+            this.cmbDocente.Location = new System.Drawing.Point(362, 124);
+            this.cmbDocente.Name = "cmbDocente";
+            this.cmbDocente.Size = new System.Drawing.Size(319, 29);
+            this.cmbDocente.TabIndex = 16;
             // 
             // btnModificar
             // 
@@ -185,18 +193,9 @@ namespace PlayerUI.Forms
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cmbDocente
-            // 
-            this.cmbDocente.FormattingEnabled = true;
-            this.cmbDocente.Location = new System.Drawing.Point(362, 124);
-            this.cmbDocente.Name = "cmbDocente";
-            this.cmbDocente.Size = new System.Drawing.Size(319, 29);
-            this.cmbDocente.TabIndex = 16;
-            // 
             // FrmAula
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(878, 661);
             this.Controls.Add(this.button1);

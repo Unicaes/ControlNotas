@@ -80,17 +80,18 @@ namespace PlayerUI
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtPassword.Location = new System.Drawing.Point(45, 388);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(305, 33);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtUsername.Location = new System.Drawing.Point(45, 297);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(305, 33);

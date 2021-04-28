@@ -26,10 +26,23 @@ namespace PlayerUI
             this.Close();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loginAction();
+        }
+
+        private void FillUsuario()
+        {
+            oUsuario = new Usuario();
+            oUsuario.Username = txtUsername.Text.Trim();
+            oUsuario.Clave = txtPassword.Text.Trim();
+
+        }
+
+        private async void loginAction()
         {
             FillUsuario();
-            var resp = await api.Post(Controllers.UsuarioController+"/Login",oUsuario);
+            var resp = await api.Post(Controllers.UsuarioController + "/Login", oUsuario);
             if (resp.IsSuccess)
             {
                 frmMain main = new frmMain();
@@ -40,15 +53,14 @@ namespace PlayerUI
             {
                 MessageBox.Show("Verifica tus datos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
 
-        private void FillUsuario()
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            oUsuario = new Usuario();
-            oUsuario.Username = txtUsername.Text.Trim();
-            oUsuario.Clave = txtPassword.Text.Trim();
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginAction();
+            }
         }
     }
 }

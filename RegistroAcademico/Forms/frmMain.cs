@@ -106,16 +106,27 @@ namespace PlayerUI
             var Alumnos = await api.GetAll<Usuario>(Controllers.UsuarioController + "/Alumnos");
             if (Alumnos.IsSuccess)
             {
-                ObservableCollection<Usuario> LAlumnos = (ObservableCollection<Usuario>)Alumnos.Result;
+                List<Usuario> LAlumnos = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Usuario>>(Alumnos.Result.ToString()); 
                 ReporteNominaAlumnos reporte = new ReporteNominaAlumnos();
                 reporte.PrintReport(LAlumnos);
+                MessageBox.Show("Reporte guardado correctamente en: " + reporte.path, "Informe completado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(reporte.path);
             }
             hideSubMenu();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            //NOMINA DOCENTES
+            api = new ApiService();
+            var Docentes = await api.GetAll<Usuario>(Controllers.UsuarioController + "/Docentes");
+            if (Docentes.IsSuccess)
+            {
+                List<Usuario> LDocentes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Usuario>>(Docentes.Result.ToString()); 
+                ResporteNominaDocentes reporte = new ResporteNominaDocentes();
+                reporte.PrintReport(LDocentes);
+                MessageBox.Show("Reporte guardado correctamente en: " + reporte.path, "Informe completado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(reporte.path);
+            }
             hideSubMenu();
         }
         #endregion
@@ -139,13 +150,14 @@ namespace PlayerUI
         private void button12_Click(object sender, EventArgs e)
         {
             //MATERIAS
+            openChildForm(new FrmMaterias());
             hideSubMenu();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             //AULA
-
+            openChildForm(new FrmAula());
             hideSubMenu();
         }
 
