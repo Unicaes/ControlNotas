@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlayerUI.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,14 @@ namespace PlayerUI
             frmMain main = new frmMain();
             main.Show();
             this.Hide();
+        }
+
+        private void FillUsuario()
+        {
+            Usuario oUsuario = new Usuario();
+            oUsuario.User = txtUsername.Text.Trim();
+            oUsuario.Clave = txtPassword.Text.Trim();
+
         }
     }
 }
