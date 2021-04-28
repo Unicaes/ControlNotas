@@ -19,7 +19,7 @@ namespace PlayerUI.Middlewares
     class ResporteNominaDocentes
     {
         public string path;
-        public void PrintReport(ObservableCollection<Usuario> lista)
+        public void PrintReport(List<Usuario> lista)
         {
             //Fuentes y Colores
             Color blue = new DeviceRgb(0, 120, 212);
@@ -42,27 +42,27 @@ namespace PlayerUI.Middlewares
              };
             string fecha = DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
             var exportFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            path = System.IO.Path.Combine(exportFolder, $"Nomina Alumnos ({fecha}).pdf");
+            path = System.IO.Path.Combine(exportFolder, $"Nomina Docentes ({fecha}).pdf");
             using (var writer = new PdfWriter(path))
             {
                 using (var pdf = new PdfDocument(writer))
                 {
-                    var doc = new Document(pdf, PageSize.A4);
+                    var doc = new Document(pdf, PageSize.A4.Rotate());
                     doc.SetMargins(35, 35, 35, 35);
 
-                    Table tabla = new Table(new float[10]).UseAllAvailableWidth();
+                    Table tabla = new Table(new float[6]).UseAllAvailableWidth();
                     Cell contenido;
 
                     //Titulo
-                    contenido = new Cell(1, 10).Add(new Paragraph("Nómina de Alumnos")).AddStyle(mainStyles[100]);
+                    contenido = new Cell(1, 6).Add(new Paragraph("Nómina de Alumnos")).AddStyle(mainStyles[100]);
                     tabla.AddCell(contenido);
 
                     //Espacio en blanco
-                    contenido = new Cell(1, 10).Add(new Paragraph("\n ")).AddStyle(mainStyles[102]);
+                    contenido = new Cell(1, 6).Add(new Paragraph("\n ")).AddStyle(mainStyles[102]);
                     tabla.AddCell(contenido);
 
                     //Encabezados
-                    contenido = new Cell(1, 1).Add(new Paragraph("NIE")).AddStyle(mainStyles[105]);
+                    contenido = new Cell(1, 1).Add(new Paragraph("Documento")).AddStyle(mainStyles[105]);
                     tabla.AddCell(contenido);
                     contenido = new Cell(1, 1).Add(new Paragraph("Nombre")).AddStyle(mainStyles[105]);
                     tabla.AddCell(contenido);
@@ -73,12 +73,6 @@ namespace PlayerUI.Middlewares
                     contenido = new Cell(1, 1).Add(new Paragraph("Dirección")).AddStyle(mainStyles[105]);
                     tabla.AddCell(contenido);
                     contenido = new Cell(1, 1).Add(new Paragraph("Fecha de Nacimiento")).AddStyle(mainStyles[105]);
-                    tabla.AddCell(contenido);
-                    contenido = new Cell(1, 1).Add(new Paragraph("Representante")).AddStyle(mainStyles[105]);
-                    tabla.AddCell(contenido);
-                    contenido = new Cell(1, 1).Add(new Paragraph("Telefono")).AddStyle(mainStyles[105]);
-                    tabla.AddCell(contenido);
-                    contenido = new Cell(1, 1).Add(new Paragraph("Documento")).AddStyle(mainStyles[105]);
                     tabla.AddCell(contenido);
 
                     for (int i = 0; i < lista.Count; i++)
@@ -97,12 +91,7 @@ namespace PlayerUI.Middlewares
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Fecha_Nacimiento.ToString())).AddStyle(mainStyles[102]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Representante)).AddStyle(mainStyles[102]);
-                            tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Telefono_Representante)).AddStyle(mainStyles[102]);
-                            tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Documento_Representante)).AddStyle(mainStyles[102]);
-                            tabla.AddCell(contenido);
+                          
                         }
                         else
                         {
@@ -120,21 +109,16 @@ namespace PlayerUI.Middlewares
                             tabla.AddCell(contenido);
                             contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Fecha_Nacimiento.ToString())).AddStyle(mainStyles[101]);
                             tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Representante)).AddStyle(mainStyles[101]);
-                            tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Telefono_Representante)).AddStyle(mainStyles[101]);
-                            tabla.AddCell(contenido);
-                            contenido = new Cell(1, 1).Add(new Paragraph(lista[i].Documento_Representante)).AddStyle(mainStyles[101]);
-                            tabla.AddCell(contenido);
+                            
                         }
                     }
 
                     //espacios
-                    contenido = new Cell(2, 11).Add(new Paragraph("\n ")).AddStyle(mainStyles[100]);
+                    contenido = new Cell(2, 6).Add(new Paragraph("\n ")).AddStyle(mainStyles[100]);
                     tabla.AddCell(contenido);
 
                     //pie de página
-                    contenido = new Cell(1, 11).Add(new Paragraph("Fecha de impresión: " + DateTime.Now.ToString())).AddStyle(mainStyles[103]);
+                    contenido = new Cell(1, 6).Add(new Paragraph("Fecha de impresión: " + DateTime.Now.ToString())).AddStyle(mainStyles[103]);
                     tabla.AddCell(contenido);
                     doc.Add(tabla);
                     doc.Close();
