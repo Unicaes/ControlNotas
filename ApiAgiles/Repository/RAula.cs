@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ApiAgiles.Repository
 {
-    public class RAula :ICrudGeneral<Aula>
+    public class RAula : IAula<Aula>
     {
         private readonly Model1 db = new Model1();
         public Response Delete(int id)
@@ -75,6 +75,36 @@ namespace ApiAgiles.Repository
             }
         }
 
+        public Response GetAulaByDocente(int id)
+        {
+            try
+            {
+                db.Configuration.ProxyCreationEnabled = false;
+                var aula = db.Aula.Where(x => x.Id_Usuario.Equals(id));
+                if (aula==null)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = "Record not found"
+                    };
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = aula
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+            }
+        }
+
         public Response GetById(int id)
         {
             try
@@ -102,6 +132,37 @@ namespace ApiAgiles.Repository
                     IsSuccess = false,
                     Message = ex.InnerException.Message
                 };
+            }
+        }
+
+        public Response GetStudents(int id)
+        {
+            try
+            {
+                db.Configuration.ProxyCreationEnabled = false;
+                var students = db.Usuario.Where(x => x.Id_Aula.Equals(id));
+                if (students.Count()<=0)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = "Not results at all"
+                    };
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = students
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
             }
         }
 

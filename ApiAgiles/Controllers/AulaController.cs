@@ -12,7 +12,7 @@ namespace ApiAgiles.Controllers
 {
     public class AulaController : ApiController
     {
-        private readonly ICrudGeneral<Aula> UserRepository = new RAula();
+        private readonly IAula<Aula> UserRepository = new RAula();
         [HttpGet]
         public HttpResponseMessage GetAulas()
         {
@@ -63,6 +63,28 @@ namespace ApiAgiles.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.Conflict, "No se ha podido actualizar el registro");
             }
             return Request.CreateResponse(HttpStatusCode.OK, "El registro ha sido actualizado");
+        }
+        [HttpGet]
+        [Route("api/Aula/AulaByDocente/{id}")]
+        public HttpResponseMessage GetAulaByDocente(int id)
+        {
+            var resp = UserRepository.GetAulaByDocente(id);
+            if (!resp.IsSuccess)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, resp.Message);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, resp);
+        }
+        [HttpGet]
+        [Route("api/Aula/Students/{id}")]
+        public HttpResponseMessage GetStudentsByAula(int id)
+        {
+            var resp = UserRepository.GetStudents(id);
+            if (!resp.IsSuccess)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, resp.Message);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, resp);
         }
     }
 }
