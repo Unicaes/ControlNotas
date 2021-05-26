@@ -17,8 +17,7 @@ namespace ApiAgiles.Models
         [StringLength(4)]
         public string Anio { get; set; }
 
-        [StringLength(1)]
-        public string Trimestre { get; set; }
+        public int? Trimestre { get; set; }
 
         public float? Porcentaje { get; set; }
 
@@ -27,6 +26,8 @@ namespace ApiAgiles.Models
         public int? Id_Usuario { get; set; }
 
         public virtual Materia Materia { get; set; }
+
+        public virtual Periodo Periodo { get; set; }
 
         public virtual Usuario Usuario { get; set; }
     }

@@ -16,6 +16,7 @@ namespace ApiAgiles.Models
         public virtual DbSet<Aula_Materia> Aula_Materia { get; set; }
         public virtual DbSet<Materia> Materia { get; set; }
         public virtual DbSet<Nota> Nota { get; set; }
+        public virtual DbSet<Periodo> Periodo { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
@@ -46,9 +47,10 @@ namespace ApiAgiles.Models
                 .Property(e => e.Anio)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Nota>()
-                .Property(e => e.Trimestre)
-                .IsUnicode(false);
+            modelBuilder.Entity<Periodo>()
+                .HasMany(e => e.Nota)
+                .WithOptional(e => e.Periodo)
+                .HasForeignKey(e => e.Trimestre);
 
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.Nombre)
