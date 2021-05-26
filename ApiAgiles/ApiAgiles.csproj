@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\NotaController.cs" />
+    <Compile Include="Controllers\PeriodoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,16 +178,19 @@
     <Compile Include="Models\Materia.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\Nota.cs" />
+    <Compile Include="Models\Periodo.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IAula.cs" />
     <Compile Include="Repository\ICrudGeneral.cs" />
     <Compile Include="Repository\IUsuario.cs" />
     <Compile Include="Repository\RAula.cs" />
     <Compile Include="Repository\RAulaMateria.cs" />
     <Compile Include="Repository\RMateria.cs" />
     <Compile Include="Repository\RNota.cs" />
+    <Compile Include="Repository\RPeriodo.cs" />
     <Compile Include="Repository\RUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
